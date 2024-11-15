@@ -1,0 +1,63 @@
+create table class_teacher(
+	teacher_id varchar(5) PRIMARY KEY,
+	teacher_name varchar(25),
+	class varchar(5),
+	e_mail varchar(20),
+	password varchar(15)
+
+);
+
+
+insert into class_teacher values ('U001','Shawanthi', '11s1','shawanthi@gmail.com','shawanthi');
+
+
+
+create table student(
+
+	student_no varchar(4) primary key,
+	student_name varchar(25),
+	class varchar(5),
+	class_teacherID varchar(5) NOT NULL,
+	total_marks varchar(5), 
+	average varchar(5),
+	position varchar(5),
+	religion varchar(3),
+	first_language varchar(3),
+	english varchar(3),
+	mathematics varchar(3),
+	science varchar(3),
+	history varchar(3),
+	commerce varchar(3),
+	art varchar(3),
+	IT varchar(3),
+	CONSTRAINT FOREIGN KEY(class_teacherID) REFERENCES class_teacher(teacher_id)
+
+
+);
+
+insert into student values('01','Kasun','11s1','U001','891','99','01','99','99','99','99','99','99','99','99','99');
+
+
+create table student(
+
+	student_no INT primary key,
+	student_name varchar(25),
+	class varchar(5),
+	class_teacherID varchar(5) NOT NULL,
+	total_marks INT, 
+	average FLOAT,
+	position INT,
+	religion INT,
+	first_language INT,
+	english INT,
+	mathematics INT,
+	science INT,
+	history INT,
+	commerce INT,
+	art INT,
+	IT INT,
+	CONSTRAINT FOREIGN KEY(class_teacherID) REFERENCES class_teacher(teacher_id)
+
+);
+
+insert into student values(1,'Kasun','11s1','U001',891,99,1,99,99,99,99,99,99,99,99,99);
